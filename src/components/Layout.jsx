@@ -1,12 +1,12 @@
 import React from 'react'
 import HeroSection from './HeroSection'
-import Slider from './Slider'
+import HeroSection2 from './HeroSection2'
 
 const Layout = () => {
   return (
     <>
         <HeroSection />
-        <Slider />
+        <HeroSection2 />
     </>
   )
 }

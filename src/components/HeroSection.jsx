@@ -46,7 +46,7 @@ const HeroSection = () => {
                   </button>
                 </div>
                 <div className="aggreement">
-                  <p className="mt-3">
+                  <p className="mt-3 mb-0">
                     Google Play Games beta is required to install this game on
                     Windows. By downloading the beta and the game, you agree to
                     the Google Terms of Service and Google Play Terms of
