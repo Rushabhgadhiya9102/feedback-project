@@ -166,7 +166,7 @@ const RatingsSection = () => {
                 </div>
               </div>
 
-              <ul className="list-unstyled overflow-y-scroll">
+              <ul className="list-unstyled overflow-y-scroll" style={{height:"500px"}}>
                 {list.map((val, index) => (
                   <li key={val.id} className="py-3">
                     {[...Array(5).keys()].map((_, index) => (
