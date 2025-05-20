@@ -72,7 +72,7 @@ const RatingsSection = () => {
 
     event.preventDefault();
     setList([...list, { ...feedback, star: star, id: Date.now()}]);
-    setFeedBack({message: ''});
+    setFeedBack({});
     setStar(0);
 
   };
