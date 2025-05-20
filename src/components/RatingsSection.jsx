@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import Gameicons1 from '../assets/similar-games-1.webp'
+import Gameicons1 from "../assets/similar-games-1.webp";
+import Gameicons2 from "../assets/similar-games-2.webp";
+import Gameicons3 from "../assets/similar-games-3.webp";
+import Gameicons4 from "../assets/similar-games-4.webp";
+import Gameicons5 from "../assets/similar-games-5.webp";
+import Gameicons6 from "../assets/similar-games-6.webp";
 import { FaArrowRight, FaStar } from "react-icons/fa6";
 
 const RatingsSection = () => {
@@ -37,6 +42,45 @@ const RatingsSection = () => {
     setFeedBack({ message: "" });
     setStar(0);
   };
+
+  const GamesData = [
+    {
+      name: "Mech vs Aliens: War Robots RPG",
+      company: "RightSoftLabs",
+      img: Gameicons1,
+      rating: 3.4,
+    },
+    {
+      name: "Rise of dune",
+      company: "FUNGAME PTE.LTD",
+      img: Gameicons2,
+      rating: 3.6,
+    },
+    {
+      name: "Stellaris: Galaxy Command",
+      company: "GameBear Tech",
+      img: Gameicons3,
+      rating: 4.1,
+    },
+    {
+      name: "Infinite Galaxy",
+      company: "CamelStudio",
+      img: Gameicons4,
+      rating: 3.5,
+    },
+    {
+      name: "Frostpunk: Beyond the Ice",
+      company: "Com2uS",
+      img: Gameicons5,
+      rating: 4.3,
+    },
+    {
+      name: "Stellar Wind: Outer Space Game",
+      company: "Entrophy Games Studio",
+      img: Gameicons6,
+      rating: 3.5,
+    },
+  ];
 
   return (
     <>
@@ -79,7 +123,7 @@ const RatingsSection = () => {
                 </div>
               </div>
 
-              <ul className="list-unstyled">
+              <ul className="list-unstyled overflow-y-scroll">
                 {list.map((val, index) => (
                   <>
                     <li key={index} className="py-3">
@@ -115,16 +159,29 @@ const RatingsSection = () => {
                   </h4>
                 </div>
                 <div className="content">
-                    <ul className="list-unstyled">
+                  <ul className="list-unstyled mt-5 h-75">
+                    {GamesData.map((val) => {
+                      const { name, company, rating, img } = val;
+
+                      return (
                         <li className="d-flex gap-3">
-                            <img src={Gameicons1} className="img-fluid rounded-4" alt="" style={{width:"70px", height:"70px"}} />
-                            <div>
-                                <p className="mb-0">Mech vs Aliens: War Robots RPG</p>
-                                <p className="mb-0">RightSoftLabs</p>
-                                <p>3.8 <FaStar/></p>
-                            </div>
+                          <img
+                            src={img}
+                            className="img-fluid rounded-4"
+                            alt=""
+                            style={{ width: "70px", height: "70px" }}
+                          />
+                          <div>
+                            <p className="mb-0">{name}</p>
+                            <p className="mb-0">{company}</p>
+                            <p className="d-flex align-items-center gap-1">
+                             {rating} <FaStar />
+                            </p>
+                          </div>
                         </li>
-                    </ul>
+                      );
+                    })}
+                  </ul>
                 </div>
               </div>
             </div>
